@@ -1,6 +1,6 @@
 console.log('hellow world server side js ')
 
-import  express from "express"
+import express from "express"
 
 const app = express()
 const PORT = 8000
@@ -12,6 +12,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/profile', (req, res) => {
+    console.log('this is profile!', new Date());
+    res.send('this is profile' + new Date());
+})
+
+app.get('/home', (req, res) => {
     console.log('this is profile!', new Date());
     res.send('this is profile' + new Date());
 })
