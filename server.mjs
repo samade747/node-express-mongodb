@@ -51,10 +51,12 @@ app.get('/weather/:cityName', (req, res) => {
     if(weatherDataToSend){
         res.send(weatherDataToSend)
     } else{
-        res.status(404).send();
+        res
+        .status(404)
+        .send(`weather data is not available for ${req.params.cityName}`);
     }
     
-    res.send();
+    
 })
 
 
