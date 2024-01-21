@@ -7,7 +7,6 @@ const app = express()
 app.use(cors())
 
 
-
 // http://183.183.118.104:8000
 app.get('/', (req, res) => {
     console.log('hello world!', new Date());
@@ -53,7 +52,7 @@ app.get('/weather/:cityName', (req, res) => {
     } else{
         res
         .status(404)
-        .send(`weather data is not available for ${req.params.cityName}`);
+         .send(`weather data is not available for ${req.params.cityName}`);
     }
     
     
