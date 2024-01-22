@@ -1,30 +1,43 @@
-console.log('hellow world server side js ')
+// console.log('hellow world server side js ')
 
 import express from "express";
 import cors from 'cors';
 
+
 const app = express()
 app.use(cors())
 
+// get 
+// server se kuch lana
 
-// http://183.183.118.104:8000
-app.get('/', (req, res) => {
-    console.log('hello world!', new Date());
-    res.send('hello wordl' + new Date());
-})
+// post 
+// server ko kuch bhej rha haoin 
 
-app.get('/profile', (req, res) => {
-    console.log('this is profile!', new Date());
-    res.send('this is profile' + new Date());
-})
+// put 
+// edit, exsiiting profile ko edit
 
-app.get('/home', (req, res) => {
-    console.log('this is profile!', new Date());
-    res.send('this is profile' + new Date());
-})
+// delete 
+// server par profile delete karne ja rha hoin 
+
+
+
+// app.get('/', (req, res) => {
+//     console.log('hello world!', new Date());
+//     res.send('hello wordl' + new Date());
+// })
+
+// app.get('/profile', (req, res) => {
+//     console.log('this is profile!', new Date());
+//     res.send('this is profile' + new Date());
+// })
+
+// app.get('/home', (req, res) => {
+//     console.log('this is profile!', new Date());
+//     res.send('this is profile' + new Date());
+// })
 
 app.get('/weather/:cityName', (req, res) => {
-    console.log('this is profile!', new Date());
+    console.log('this is weather data!', new Date());
 
     let weatherData = {
         karachi: {
@@ -59,7 +72,7 @@ app.get('/weather/:cityName', (req, res) => {
 })
 
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5500;
 app.listen(PORT, () =>{
     console.log(`example app listening on port ${PORT}`)
     

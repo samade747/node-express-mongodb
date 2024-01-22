@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>my dummy weather app</h1>
+    <form>
+        <input type="text" placeholder="city name" id="weatherCityName">
+        <button type="submit">Check Weather</button>   
+    </form>
+<div>
+    
+
+    <div id="result">
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script type="module"></script>
+<script>
+let name = 'alice';
+
+window.getweather = function  () {
+    
+    let cityName = document.querySelector('#weatherCityName').value
+    
+    axios.get(`http://localhost:3000/weather`)
+    .then(function (respone){
+        console.log(respone.data);
+        document.querySelector("#result").innerHTML = 
+        `current temperature is ${respone.data.tempInC}`
+    })
+    .catch(function (error){
+        console.log(error.data);
+        document.querySelector('#result').innerHTML = 'error in getting weather'
+    })
+}
+
+
+
+
+
+
+
+
+</script>
+    <!-- <script src="../server.mjs"></script> -->
+</body>
+</html>
